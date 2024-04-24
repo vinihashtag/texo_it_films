@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         child = MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
-          child: child ?? const Material(child: FlutterLogo()),
+          child: child!,
         );
 
         CustomResponsive.size = MediaQuery.of(context).size;

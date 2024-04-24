@@ -33,6 +33,7 @@ class DashboardPage extends GetView<DashboardController> {
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
+                            maxLines: 1,
                           ),
                           const SizedBox(height: 10),
                           DataTable(
@@ -86,6 +87,7 @@ class DashboardPage extends GetView<DashboardController> {
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
+                            maxLines: 1,
                           ),
                           const SizedBox(height: 10),
                           DataTable(
@@ -143,6 +145,7 @@ class DashboardPage extends GetView<DashboardController> {
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
+                            maxLines: 1,
                           ),
                           const SizedBox(height: 10),
                           DataTable(
@@ -190,6 +193,7 @@ class DashboardPage extends GetView<DashboardController> {
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
+                            maxLines: 1,
                           ),
                           const SizedBox(height: 10),
                           DataTable(

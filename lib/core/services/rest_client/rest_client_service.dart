@@ -1,11 +1,11 @@
-import '../../../data/models/response_model.dart';
+import 'package:texo_it_films/core/enums/type_request_enum.dart';
 
-enum MethodRequest { get, post, put, patch, delete, download }
+import '../../../data/models/response_model.dart';
 
 abstract class IRestClientService {
   Future<ResponseModel> request({
     required String path,
-    MethodRequest method = MethodRequest.get,
+    TypeRequestEnum method = TypeRequestEnum.get,
     Map<String, String>? headers,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? data,

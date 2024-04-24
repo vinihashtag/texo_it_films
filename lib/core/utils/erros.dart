@@ -1,6 +1,6 @@
 class CustomException implements Exception {
   final String message;
-  final Exception? exception;
+  final Object? exception;
   final StackTrace? stackTrace;
 
   CustomException({required this.message, this.exception, this.stackTrace});

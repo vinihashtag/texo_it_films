@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomResponsive extends StatelessWidget {
-  final Widget mobile;
-  final Widget? tablet;
-  final Widget desktop;
-
-  const CustomResponsive({
-    super.key,
-    required this.mobile,
-    this.tablet,
-    required this.desktop,
-  });
+class CustomResponsive {
+  CustomResponsive._();
 
   // * Variables
   // * ----------------------------------------------------------------------------------------------------------------
@@ -37,26 +28,4 @@ class CustomResponsive extends StatelessWidget {
   static bool get isUltraWideDesktop => _size.width >= 1920;
 
   static bool get isDesktopOrUltra => isDesktop || isUltraWideDesktop;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final double width = constraints.maxWidth;
-
-        // * If our width is more than 1100 then we consider it a desktop
-        if (width >= 1100) {
-          return desktop;
-        }
-
-        // * If width it less then 1100 and more then 850 we consider it as tablet
-        else if (width >= 800) {
-          return tablet ?? mobile;
-        }
-
-        // * Or less then that we called it mobile
-        return mobile;
-      },
-    );
-  }
 }

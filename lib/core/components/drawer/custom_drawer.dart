@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:texo_it_films/core/routes/routes.dart';
-import 'package:texo_it_films/core/utils/custom_logger.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+  final double width;
+  const CustomDrawer({super.key, this.width = 250});
 
   @override
   Widget build(BuildContext context) {
-    LoggerApp.success(AppRoutes.dashboard == Get.currentRoute);
     return Drawer(
-      backgroundColor: Colors.grey.shade100.withOpacity(0.5),
+      backgroundColor: Colors.grey.shade100,
+      surfaceTintColor: Colors.white,
       shape: const BeveledRectangleBorder(),
+      width: width,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
