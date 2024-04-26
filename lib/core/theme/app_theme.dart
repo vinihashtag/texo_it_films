@@ -57,7 +57,7 @@ class AppTheme {
           isDense: true,
           filled: true,
           fillColor: Colors.white,
-          contentPadding: const EdgeInsets.all(16),
+          contentPadding: const EdgeInsets.all(10),
           prefixIconColor: MaterialStateColor.resolveWith((states) {
             if (states.contains(MaterialState.error)) return redColor;
             return states.contains(MaterialState.focused) ? accentColor : Colors.grey;

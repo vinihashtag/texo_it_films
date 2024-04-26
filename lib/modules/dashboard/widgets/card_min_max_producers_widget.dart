@@ -47,29 +47,32 @@ class CardMinMaxProducersWidget extends StatelessWidget {
                             ),
                             if (controller.minMaxProducersModel != null) ...[
                               const SizedBox(height: 10),
-                              DataTable(
-                                headingRowHeight: 40,
-                                headingRowColor: MaterialStatePropertyAll(Colors.grey.shade200),
-                                border: TableBorder.all(
-                                    color: Colors.grey.shade400, width: 3, borderRadius: BorderRadius.circular(4)),
-                                columns: const [
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Producers')),
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Interval')),
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Previous Year')),
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Following Year')),
-                                ],
-                                rows: controller.minMaxProducersModel!.max
-                                    .map(
-                                      (e) => DataRow(
-                                        cells: [
-                                          DataCell(Text(e.producer)),
-                                          DataCell(Text(e.interval.toString())),
-                                          DataCell(Text(e.previousWin.toString())),
-                                          DataCell(Text(e.followingWin.toString()))
-                                        ],
-                                      ),
-                                    )
-                                    .toList(),
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: DataTable(
+                                  headingRowHeight: 40,
+                                  headingRowColor: MaterialStatePropertyAll(Colors.grey.shade200),
+                                  border: TableBorder.all(
+                                      color: Colors.grey.shade400, width: 3, borderRadius: BorderRadius.circular(4)),
+                                  columns: const [
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Producers')),
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Interval')),
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Previous Year')),
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Following Year')),
+                                  ],
+                                  rows: controller.minMaxProducersModel!.max
+                                      .map(
+                                        (e) => DataRow(
+                                          cells: [
+                                            DataCell(Text(e.producer)),
+                                            DataCell(Text(e.interval.toString())),
+                                            DataCell(Text(e.previousWin.toString())),
+                                            DataCell(Text(e.followingWin.toString()))
+                                          ],
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
                               ),
                               const SizedBox(height: 20),
                               Text(
@@ -81,29 +84,32 @@ class CardMinMaxProducersWidget extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 10),
-                              DataTable(
-                                headingRowHeight: 40,
-                                headingRowColor: MaterialStatePropertyAll(Colors.grey.shade200),
-                                border: TableBorder.all(
-                                    color: Colors.grey.shade400, width: 3, borderRadius: BorderRadius.circular(4)),
-                                columns: const [
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Producers')),
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Interval')),
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Previous Year')),
-                                  DataColumn(label: DefaultTitleTableWidget(text: 'Following Year')),
-                                ],
-                                rows: controller.minMaxProducersModel!.min
-                                    .map(
-                                      (e) => DataRow(
-                                        cells: [
-                                          DataCell(Text(e.producer)),
-                                          DataCell(Text(e.interval.toString())),
-                                          DataCell(Text(e.previousWin.toString())),
-                                          DataCell(Text(e.followingWin.toString()))
-                                        ],
-                                      ),
-                                    )
-                                    .toList(),
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: DataTable(
+                                  headingRowHeight: 40,
+                                  headingRowColor: MaterialStatePropertyAll(Colors.grey.shade200),
+                                  border: TableBorder.all(
+                                      color: Colors.grey.shade400, width: 3, borderRadius: BorderRadius.circular(4)),
+                                  columns: const [
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Producers')),
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Interval')),
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Previous Year')),
+                                    DataColumn(label: DefaultTitleTableWidget(text: 'Following Year')),
+                                  ],
+                                  rows: controller.minMaxProducersModel!.min
+                                      .map(
+                                        (e) => DataRow(
+                                          cells: [
+                                            DataCell(Text(e.producer)),
+                                            DataCell(Text(e.interval.toString())),
+                                            DataCell(Text(e.previousWin.toString())),
+                                            DataCell(Text(e.followingWin.toString()))
+                                          ],
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
                               ),
                             ],
                           ],

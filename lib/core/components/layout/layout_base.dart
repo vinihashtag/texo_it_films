@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:texo_it_films/core/components/drawer/custom_drawer.dart';
 import 'package:texo_it_films/core/utils/custom_responsive.dart';
 
@@ -20,7 +21,7 @@ class LayoutBase extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
-          drawer: CustomResponsive.isMobile ? const CustomDrawer() : null,
+          drawer: CustomResponsive.isMobile || !GetPlatform.isDesktop ? const CustomDrawer() : null,
           appBar: appBarCustom ??
               (titleAppBar.isEmpty
                   ? null
@@ -29,7 +30,7 @@ class LayoutBase extends StatelessWidget {
                     )),
           body: AnimatedSwitcher(
             duration: const Duration(milliseconds: 350),
-            child: CustomResponsive.isMobile
+            child: CustomResponsive.isMobile || !GetPlatform.isDesktop
                 ? content
                 : Row(
                     crossAxisAlignment: CrossAxisAlignment.start,

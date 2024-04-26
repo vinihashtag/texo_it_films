@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../core/enums/status_type_enum.dart';
@@ -59,6 +60,9 @@ class FilmController extends GetxController {
 
   @override
   void onInit() {
+    if (!GetPlatform.isDesktop) {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+    }
     getFilmsByFilter(refresh: true);
     super.onInit();
   }
@@ -91,5 +95,13 @@ class FilmController extends GetxController {
       filmPaginationModel = response.data;
       _status.value = StatusTypeEnum.success;
     }
+  }
+
+  @override
+  void onClose() {
+    if (!GetPlatform.isDesktop) {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    }
+    super.onClose();
   }
 }

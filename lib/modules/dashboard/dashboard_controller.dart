@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:texo_it_films/core/enums/status_type_enum.dart';
 import 'package:texo_it_films/data/repositories/film_repository_interface.dart';
@@ -63,6 +64,9 @@ class DashboardController extends GetxController {
 
   @override
   void onInit() {
+    if (!GetPlatform.isDesktop) {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    }
     getMultipleWinners();
     getTopStudios();
     getMinMaxProducers();
