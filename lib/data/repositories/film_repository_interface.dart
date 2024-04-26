@@ -13,5 +13,5 @@ abstract class IFilmRepository {
   Future<ResponseModel<MinMaxProducersModel, CustomException>> getMinMaxProducers();
   Future<ResponseModel<List<WinnerByYearModel>, CustomException>> getWinnersByYear(int year);
   Future<ResponseModel<FilmPaginationModel, CustomException>> getFilmsByFilter(
-      {required int page, int? year, bool winner = false});
+      {required int page, int? year, bool? winner = false, int size = 15});
 }

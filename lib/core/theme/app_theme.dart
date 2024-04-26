@@ -19,6 +19,7 @@ class AppTheme {
   static const Color blueColor = Color(0xff2196F3);
   static ThemeData get defaultTheme => ThemeData(
         primaryColor: primaryColor,
+        canvasColor: Colors.white,
         appBarTheme: const AppBarTheme(
           surfaceTintColor: primaryColor,
           foregroundColor: accentColor,
@@ -56,22 +57,22 @@ class AppTheme {
           isDense: true,
           filled: true,
           fillColor: Colors.white,
-          contentPadding: const EdgeInsets.all(10),
+          contentPadding: const EdgeInsets.all(16),
           prefixIconColor: MaterialStateColor.resolveWith((states) {
             if (states.contains(MaterialState.error)) return redColor;
             return states.contains(MaterialState.focused) ? accentColor : Colors.grey;
           }),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: accentColor, width: 1.8),
+            borderSide: const BorderSide(color: primaryColor, width: 1.8),
           ),
           disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: accentColor, width: 1.8),
+            borderSide: const BorderSide(color: primaryColor, width: 1.8),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: accentColor, width: 2),
+            borderSide: const BorderSide(color: primaryColor, width: 2),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),

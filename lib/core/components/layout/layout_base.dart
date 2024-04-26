@@ -36,7 +36,7 @@ class LayoutBase extends StatelessWidget {
                     children: [
                       CustomDrawer(width: constraints.maxWidth * .15 < 250 ? 200 : constraints.maxWidth * .15),
                       Expanded(
-                        child: Padding(padding: padding ?? const EdgeInsets.fromLTRB(24, 8, 24, 48), child: content),
+                        child: Padding(padding: padding ?? const EdgeInsets.fromLTRB(24, 8, 24, 8), child: content),
                       )
                     ],
                   ),
